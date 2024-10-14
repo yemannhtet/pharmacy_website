@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class poularItem extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'product_id',
+        'product_price',
+        'product_image',
+    ];
 }

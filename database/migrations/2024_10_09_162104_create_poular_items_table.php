@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('poular_items', function (Blueprint $table) {
             $table->id();
+            $table->integer('product_id');
+            $table->integer('product_price');
+            $table->string('product_image');
             $table->timestamps();
         });
     }
