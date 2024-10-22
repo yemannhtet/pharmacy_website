@@ -29,8 +29,18 @@ class ProviderController extends Controller
                 'provider_token' => $socialUser->token,
             ]);
 
-           Auth::login($user);
 
-           return redirect ('dashboard');
+            Auth::login($user);
+
+
+            if(Auth::user()->role == 'admin'){
+                return to_route('adminDashboard');
+            }
+
+            if(Auth::user()->role == 'user'){
+                return to_route('userDashboard');
+            }
+
+
         }
 }
