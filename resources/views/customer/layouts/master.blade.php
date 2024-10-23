@@ -201,6 +201,7 @@
     <!-- End Top Search -->
 
  @yield('content')
+ @include('sweetalert::alert')
 
 
 

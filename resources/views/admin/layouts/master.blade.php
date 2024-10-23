@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('admin/assets/images/logo-text.png') }}" />
+
+    {{-- fonts awesome cdn --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -130,7 +133,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('adminDashboard')}}">
                             <img src="{{ asset('admin/assets/images/dashboard-square-03-stroke-rounded.svg') }}"
                                 alt="" style="width:18px;" class="me-2">
                             <span class="menu-title">Dashboard</span>
@@ -149,7 +152,7 @@
                                 <li class="nav-item"><a class="nav-link" href="#"><img
                                             src="{{ asset('admin/assets/images/list.svg') }}" alt=""
                                             style="width:18px;" class="me-2">Product List</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#"><img
+                                <li class="nav-item"><a class="nav-link" href="{{ route('categoryList')}}"><img
                                             src="{{ asset('admin/assets/images/category.svg') }}" alt=""
                                             style="width:18px;" class="me-2">Category</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#"><img
@@ -238,6 +241,8 @@
             </nav>
             <!-- partial -->
             @yield('content')
+            @include('sweetalert::alert')
+
         </div>
         <!-- page-body-wrapper ends -->
     </div>
