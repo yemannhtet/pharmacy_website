@@ -149,12 +149,12 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="#"><img
-                                            src="{{ asset('admin/assets/images/list.svg') }}" alt=""
-                                            style="width:18px;" class="me-2">Product List</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('categoryList')}}"><img
                                             src="{{ asset('admin/assets/images/category.svg') }}" alt=""
                                             style="width:18px;" class="me-2">Category</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('productList')}}"><img
+                                                src="{{ asset('admin/assets/images/list.svg') }}" alt=""
+                                                style="width:18px;" class="me-2">Product List</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#"><img
                                             src="{{ asset('admin/assets/images/plus.svg') }}" alt=""
                                             style="width:18px;" class="me-2">Add Item</a></li>
@@ -268,6 +268,18 @@
     <script src="assets/js/dashboard.js"></script>
     <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
     <!-- End custom js for this page-->
+    <script>
+        function loadFile(event){
+            var reader = new FileReader();
+
+            reader.onload = function(){
+                var output = document.getElementById('output')
+                output.src = reader.result
+            }
+            reader.readAsDataURL(event.target.files[0])
+        }
+</script>
+@yield('script-section')
 </body>
 
 </html>

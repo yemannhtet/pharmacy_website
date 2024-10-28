@@ -59,9 +59,10 @@
                         <form action="{{route('categoryCreate')}}" method="POST">
                             @csrf
                             <label for="product-category" class="form-label">Product Category</label>
-                            <input type="text" class="form-control" id="product-category" placeholder="Type your category here" name="category" value="{{old('category')}}">
+                            <input type="text" class="form-control" id="product-category" placeholder="Type your category name here" name="category" value="{{old('category')}}">
                         </div>
                         <button class="btn btn-primary" type="submit">Add Category</button>
+
                         </form>
             </div>
         </div>
@@ -83,6 +84,7 @@
                 <td>{{ $category->id}}</td>
                 <td>{{ $category->name}}</td>
                 <td>
+                    <a href="{{ route('categoryEdit',$category->id) }}" class="btn btn-outline-success"><i class="fa-solid fa-pen-to-square"></i></a>
                     <a href="{{ route('categoryDelete',$category->id) }}" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></i></a>
                 </td>
             </tr>
